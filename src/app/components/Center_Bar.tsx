@@ -2,6 +2,9 @@ import Image from "next/image";
 import Dayli_Dev from "./Dayli_Dev";
 import about from "@assets/about.svg";
 import MorphingText from "@/components/ui/morph";
+
+
+
 const info = [
   {
     name: "21 yo.",
@@ -39,15 +42,17 @@ const Center_Bar = () => {
         <h2 className="text-xl font-bold uppercase">Chi sono</h2>
       </div>
       <div className="my-4">
-        <p className="relative flex w-full mt-6 mb-6 text-lg md:mb-0 lg:mt-1">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro in,
-          facilis sapiente animi optio provident blanditiis ipsa quibusdam
-          maxime odio fuga eos, possimus ea delectus consectetur. Doloribus,
-          nobis molestiae! Ea!
+        <p className="relative  w-full mt-6 mb-6 text-lg md:mb-0 lg:mt-1">
+          Fin da piccolo ho sempre avuto una grande passione per l’informatica.
+          All’inizio mi piaceva soprattutto smontare e capire come funzionavano
+          i componenti hardware, giocando con dispositivi come Arduino. La
+          svolta è arrivata quando mi sono chiesto:{" "}
+          <strong>“Ma come è stato creato internet?”</strong>
           <br />
           <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro in,
-          facilis sapiente animi optio provident blanditiis ipsa quibusdam.
+          Da lì ho iniziato a fare piccoli progetti con HTML e CSS, scoprendo un
+          mondo che mi ha subito conquistato. Ogni nuovo passo mi ha spinto a
+          imparare sempre di più e non ho mai smesso di divertirmi.
         </p>
 
         <div className="flex flex-row gap-2 items-center mt-5">

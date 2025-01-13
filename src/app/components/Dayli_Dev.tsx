@@ -96,10 +96,10 @@ const StackCard = ({
 
 const Dayli_Dev = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 pt-10 border-t border-neutral-700">
       <div className="flex flex-row items-center gap-2">
         <Image src={code} alt="code" width={20} height={20} />
-        <h2 className="text-2xl font-bold">Daily Stack</h2>
+        <h2 className="text-2xl font-bold uppercase">My Daily Stack</h2>
       </div>
       <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl mt-5">
         <Marquee pauseOnHover className="[--duration:20s]">

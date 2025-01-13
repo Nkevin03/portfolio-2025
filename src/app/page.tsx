@@ -1,6 +1,6 @@
 import Left_Bar from "./components/Left_Bar";
 import Center_Bar from "./components/Center_Bar";
-
+import Right_Bar from "./components/Right_Bar";
 export default function Home() {
   return (
     <div className="grid grid-cols-3 h-screen">
@@ -11,7 +11,7 @@ export default function Home() {
         <Center_Bar />
       </div>
       <div className="px-10 py-10">
-        <h1>Hello World</h1>
+        <Right_Bar />
       </div>
     </div>
   );
