@@ -1,5 +1,7 @@
 import Work from "./Work";
 import Fun_Facts from "./Fun_Facts";
+import Image from "next/image";
+
 const Right_Bar = () => {
   return (
     <div className="flex flex-col items-start justify-start md:pt-16">

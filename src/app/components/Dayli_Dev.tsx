@@ -83,7 +83,10 @@ const StackCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <Image src={icon} alt={name} width={30} height={30} />
+        <Image src={icon} alt={name} width={30} style={{
+          width: '30px',
+          height: 'auto'
+        }} />
         {/* <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
@@ -98,7 +101,10 @@ const Dayli_Dev = () => {
   return (
     <div className="mt-10 pt-10 border-t border-neutral-700">
       <div className="flex flex-row items-center gap-2">
-        <Image src={code} alt="code" width={20} height={20} />
+        <Image src={code} alt="code" width={20} style={{
+          width: '20px',
+          height: 'auto'
+        }} />
         <h2 className="text-2xl font-bold uppercase">My Daily Stack</h2>
       </div>
       <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl mt-5">

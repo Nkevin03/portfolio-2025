@@ -39,7 +39,17 @@ const WorkCard = ({ name, src }: { name: string; src: StaticImageData }) => {
       )}
     >
       <div className="flex flex-row items-center">
-        <Image src={src} alt={name} width={200} height={200} className="rounded-lg" />
+        <Image
+          src={src}
+          alt={name}
+          width={300}
+          height={200}
+          style={{
+            width: '200px',
+            height: 'auto'
+          }}
+          className="rounded-lg"
+        />
       </div>
     </figure>
   );
