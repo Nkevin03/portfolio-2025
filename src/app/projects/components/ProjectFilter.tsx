@@ -19,6 +19,7 @@ export default function ProjectFilter() {
     }
   };
 
+  
   return (
     <div className="flex gap-2 flex-wrap pe-10">
       <div className='border-2 border-white rounded-xl md:p-5'>
