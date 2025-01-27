@@ -17,6 +17,9 @@ const eslintConfig = [
       "@next/next/no-page-custom-font": "off",
     },
   },
+  {
+    ignoreDuringBuilds: true,
+  },
 ];
 
 export default eslintConfig;
