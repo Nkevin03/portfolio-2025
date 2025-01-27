@@ -2,6 +2,19 @@ import { getProjectBySlug, getAllProjects } from "@/lib/projects";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import { Metadata } from 'next';
+
+interface PageProps {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const project = await getProjectBySlug(params.slug);
+  return {
+    title: project?.title || 'Project Not Found',
+  };
+}
 
 export async function generateStaticParams() {
   const projects = await getAllProjects();
@@ -10,12 +23,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const project = await getProjectBySlug(params.slug);
+export default async function ProjectPage(props: PageProps) {
+  const project = await getProjectBySlug(props.params.slug);
 
   if (!project) {
     notFound();
