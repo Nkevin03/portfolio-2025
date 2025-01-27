@@ -3,13 +3,6 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
 export async function generateStaticParams() {
   const projects = await getAllProjects();
   return projects.map((project) => ({
@@ -17,7 +10,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params, searchParams }: Props) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
