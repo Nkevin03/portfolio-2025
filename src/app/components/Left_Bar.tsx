@@ -9,15 +9,17 @@ const Left_Bar = () => {
   return (
     <div className="flex flex-col items-center justify-center md:pt-16">
       <div className="w-full">
-        <div className="relative mb-5 flex flex-col group/pic w-fit rounded-full border-2 duration-700 border-white group/pic overflow-hidden">
-          <Image
-            src={avatar}
-            alt="avatar"
-            width={200}
-            height={200}
-            className="object-cover rounded-full group-hover/pic:opacity-0 duration-500 bg-white"
-          />
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover/pic:opacity-100 duration-500">
+        <div className="relative mb-5 flex flex-col group/pic w-fit rounded-full border-2 duration-700 border-white group/pic ">
+          <div className="flex items-center justify-center hover:shadow-[0_0px_35px]  hover:shadow-primary_green transition-all duration-300  rounded-full">
+            <Image
+              src={mestesso}
+              alt="avatar"
+              width={200}
+              height={200}
+              className="object-cover rounded-full  duration-500 bg-white"
+            />
+          </div>
+          {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover/pic:opacity-100 duration-500">
             <div className="flex items-center justify-center">
               <Image
                 src={mestesso}
@@ -27,7 +29,7 @@ const Left_Bar = () => {
                 className="object-cover rounded-full  duration-500 bg-white"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
