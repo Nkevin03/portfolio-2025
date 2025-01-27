@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Particles from "@/components/ui/particles";
+import Navbar from "./components/Navbar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         <div className="absolute top-0 left-0 w-full h-screen z-0">
           <Particles />
         </div>
+        <Navbar />
         <main className=" relative z-10">{children}</main>
       </body>
     </html>

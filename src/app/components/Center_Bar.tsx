@@ -30,7 +30,7 @@ const texts = [
 
 const Center_Bar = () => {
   return (
-    <div className="">
+    <div className="md:pt-16">
       <div className="flex items-center gap-3">
         <Image
           src={about}

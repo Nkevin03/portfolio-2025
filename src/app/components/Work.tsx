@@ -1,5 +1,6 @@
 import Marquee from "@/components/ui/marquee";
 import Image from "next/image";
+import { MdOutlineArrowOutward } from "react-icons/md";
 import { cn } from "@/lib/utils";
 import { StaticImageData } from "next/image";
 import gestionale from "@assets/work/gestionale.jpeg";
@@ -65,6 +66,11 @@ const Work = () => {
 
         <div className="pointer-events-none absolute inset-y-0 left-0 w-2/12 bg-gradient-to-r from-background"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-2/12 bg-gradient-to-l from-background"></div>
+      </div>
+      <div className="pt-5">
+        <a href="#" className="text-white flex justify-end items-center gap-2">
+          Vedi altro <MdOutlineArrowOutward />
+        </a>
       </div>
     </div>
   );

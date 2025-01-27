@@ -1,15 +1,17 @@
 import Work from "./Work";
-
+import Fun_Facts from "./Fun_Facts";
 const Right_Bar = () => {
   return (
-    <div className="flex flex-col items-start justify-start">
+    <div className="flex flex-col items-start justify-start md:pt-16">
       <h2 className="text-2xl font-bold uppercase">My Work</h2>
-      <div className="
-      ">
+      <div
+        className="
+      "
+      >
         <Work />
       </div>
-      <div className="mt-10 border-t border-neutral-700 w-full">
-        
+      <div className="mt-10  w-full">
+        <Fun_Facts />
       </div>
     </div>
   );
