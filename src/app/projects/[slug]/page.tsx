@@ -3,6 +3,12 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateStaticParams() {
   const projects = await getAllProjects();
   return projects.map((project) => ({
@@ -10,11 +16,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function ProjectPage({ params }: PageProps) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
@@ -23,7 +25,7 @@ export default async function ProjectPage({
 
   return (
     <article className="container mx-auto py-16">
-      <div className=" mx-auto md:pt-10">
+      <div className="mx-auto md:pt-10">
         <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
         <div className="flex gap-2 mb-8">
           <span className="px-3 py-1 bg-primary/10 rounded-full text-sm">
