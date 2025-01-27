@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 
-interface PageProps {
+type Props = {
   params: {
     slug: string;
   };
-}
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
 export async function generateStaticParams() {
   const projects = await getAllProjects();
@@ -16,7 +17,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: PageProps) {
+export default async function ProjectPage({ params, searchParams }: Props) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
@@ -41,7 +42,7 @@ export default async function ProjectPage({ params }: PageProps) {
           ))}
         </div>
         <div className="prose dark:prose-invert max-w-none">
-          <MDXRemote source={project.category} />
+          <MDXRemote source={project.title || ''} />
         </div>
       </div>
     </article>
