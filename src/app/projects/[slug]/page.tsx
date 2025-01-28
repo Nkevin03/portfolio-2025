@@ -1,62 +1,27 @@
-import { getProjectBySlug, getAllProjects } from "@/lib/projects";
-import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import Image from "next/image";
-import { Metadata } from "next";
+import { getAllProjects } from "@/lib/projects";
 
-type Params = { slug: string };
-
-interface PageProps {
-  params: Params;
-  searchParams: Record<string, string | string[] | undefined>;
-}
-
-export async function generateMetadata({
+export default async function Page({
   params,
-}: PageProps): Promise<Metadata> {
-  const { slug } = params;
-  const project = await getProjectBySlug(slug);
-  return {
-    title: project?.title || "Project Not Found",
-  };
-}
-
-export async function generateStaticParams() {
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const Project = await import(`@/content/projects/${slug}.mdx`);
   const projects = await getAllProjects();
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
-export default async function ProjectPage({ params, searchParams }: PageProps) {
-  const { slug } = params;
-  const project = await getProjectBySlug(slug);
-
-  if (!project) {
-    notFound();
-  }
+  const project = projects.find((project) => project.slug === slug);
+  console.log(project);
 
   return (
-    <article className="container mx-auto py-16">
-      <div className="mx-auto md:pt-10">
-        <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-        <div className="flex gap-2 mb-8">
-          <span className="px-3 py-1 bg-primary/10 rounded-full text-sm">
-            {project.category}
-          </span>
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-primary_green rounded-full text-sm"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="prose dark:prose-invert max-w-none">
-          <MDXRemote source={project.title || ""} />
-        </div>
+    <section className="container mx-auto md:py-16">
+      <div className="pt-10">
+        <h1 className="text-2xl font-bold">{project?.title}</h1>
       </div>
-    </article>
+    </section>
   );
 }
+
+export function generateStaticParams() {
+  return [{ slug: "cocktails" }, { slug: "portfolio-2024" }];
+}
+
+export const dynamicParams = false;

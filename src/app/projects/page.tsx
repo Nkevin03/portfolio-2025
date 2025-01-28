@@ -1,17 +1,19 @@
-import React from 'react';
 import { getAllProjects } from '@/lib/projects';
 import ProjectCard from '@/app/projects/components/ProjectCard';
 import ProjectFilter from '@/app/projects/components/ProjectFilter';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 
-export default async function ProjectsPage({
-  searchParams,
-}: {
-  searchParams: { category?: string };
-}) {
+type Props = {
+  searchParams: Promise<{ category?: string | string[] }>;
+};
+
+export default async function ProjectsPage({ searchParams }: Props) {
   const projects = await getAllProjects();
-  const filteredProjects = searchParams.category
-    ? projects.filter(project => project.category === searchParams.category)
+  const params = await searchParams;
+  const category = params.category;
+  
+  const filteredProjects = category
+    ? projects.filter(project => project.category === category)
     : projects;
 
   return (
@@ -26,8 +28,8 @@ export default async function ProjectsPage({
           </div>
           <div className="w-2/3">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
-            {filteredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
           </div>
