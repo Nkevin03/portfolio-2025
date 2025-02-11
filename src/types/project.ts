@@ -1,4 +1,4 @@
-export type ProjectCategory = 'web' | 'mobile' | 'desktop' | 'design' | 'typescript';
+export type ProjectCategory = 'webapp' | 'shadcn' | 'typescript' | 'design';
 
 export interface Project {
   slug: string;

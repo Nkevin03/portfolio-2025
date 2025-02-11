@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`}>
-      <article className="group relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary/50 transition-colors">
+      <article className="group relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary/50 transition-colors h-full">
         <Image
           src={project.image}
           alt={project.title}

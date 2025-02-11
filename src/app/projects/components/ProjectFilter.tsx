@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ProjectCategory } from '@/types/project';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-const categories: ProjectCategory[] = ['web', 'mobile', 'desktop', 'design', 'typescript'];
+const categories: ProjectCategory[] = ['webapp', 'shadcn', 'typescript', 'design'];
 
 export default function ProjectFilter() {
   const router = useRouter();
@@ -21,24 +21,31 @@ export default function ProjectFilter() {
 
   
   return (
-    <div className="flex gap-2 flex-wrap pe-10">
-      <div className='border-2 border-white rounded-xl md:p-5'>
+    <div className="inline-flex gap-2 flex-wrap pt-8 w-9/12">
+      <div className="border-2 border-white rounded-xl  flex flex-col items-start gap-2 md:py-5 md:px-10 w-full">
+        <div>
+          <h3 className="text-3xl font-bold">Filtri</h3>
+        </div>
         <Button
+          variant="tertiary"
           onClick={() => handleCategoryChange("all")}
-          className={`px-4 py-2 rounded-full ${
-            !currentCategory ? "bg-primary_green text-white" : "bg-gray-100"
+          className={`px-4 py-2 text-lg font-semibold  ${
+            !currentCategory
+              ? "border-b-2 border-white text-white  px-0"
+              : "bg-transparent px-0"
           }`}
         >
           All
         </Button>
         {categories.map((category) => (
           <Button
+            variant="tertiary"
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-4 py-2 rounded-full  ${
+            className={`px-4 py-2 text-lg font-semibold   ${
               currentCategory === category
-                ? "bg-primary_green text-white"
-                : "bg-gray-100"
+                ? "border-b-2 border-white text-white  px-0"
+                : "bg-transparent px-0"
             }`}
           >
             {category.charAt(0).toUpperCase() + category.slice(1)}
