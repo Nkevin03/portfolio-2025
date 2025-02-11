@@ -42,4 +42,37 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+.prose {
+  h1 {
+    @apply  text-6xl font-bold;
+  }
+
+  h2 {
+    @apply md:text-4xl text-3xl font-bold;
+  }
+
+  p {
+    @apply md:text-lg text-base ;
+  }
+
+  a {
+    @apply text-primary_green hover:text-primary_green/80 underline;
+  }
+
+  ul {
+    @apply list-disc pl-5;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  blockquote {
+    @apply border-l-4 border-indigo-300 pl-4 italic text-gray-600;
+  }
+
+  img {
+  }
+}
 }

@@ -1,4 +1,4 @@
-export type ProjectCategory = 'webapp' | 'shadcn' | 'typescript' | 'design';
+export type ProjectCategory = 'webapp' | 'shadcn' | 'typescript' | 'design' | 'nextjs';
 
 export interface Project {
   slug: string;
@@ -11,4 +11,5 @@ export interface Project {
   featured?: boolean;
   github?: string;
   live?: string;
+  content?: string;
 } 

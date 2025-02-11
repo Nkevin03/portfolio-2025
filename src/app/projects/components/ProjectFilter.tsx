@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ProjectCategory } from '@/types/project';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-const categories: ProjectCategory[] = ['webapp', 'shadcn', 'typescript', 'design'];
+const categories: ProjectCategory[] = ['webapp', 'shadcn', 'typescript'];
 
 export default function ProjectFilter() {
   const router = useRouter();
@@ -35,7 +35,7 @@ export default function ProjectFilter() {
               : "bg-transparent px-0"
           }`}
         >
-          All
+          Tutti
         </Button>
         {categories.map((category) => (
           <Button

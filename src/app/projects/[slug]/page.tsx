@@ -1,32 +1,36 @@
-import { getAllProjects } from "@/lib/projects";
+import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 import Image from "next/image";
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { useMDXComponents } from '../../../../mdx-components';
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-  const projects = await getAllProjects();
-  const project = projects.find((project) => project.slug === slug);
-  console.log(project);
+  const project = await getProjectBySlug(slug);
+  const components = useMDXComponents({});
 
   return (
     <section className="container mx-auto md:py-16">
-      <div className="flex flex-col md:flex-row pt-10">
-        <div className="md:w-5/12">
-          <Image
-            src={project?.image || ""}
-            alt={project?.title || ""}
-            width={1000}
-            height={1000}
-            className="rounded-3xl w-full h-auto"
-          />
+      <div className="md:pt-14">
+        <div className="md:mb-10 flex justify-center">
+          <ShimmerButton className="text-2xl font-bold">{project?.title}</ShimmerButton>
         </div>
-        <div className="md:w-7/12">
-          <h1 className="text-2xl font-bold">{project?.title}</h1>
-          <p>{project?.description}</p>
-          <div className="flex  gap-2">
-          </div>
+        <Image
+          src={project?.image || ""}
+          alt={project?.title || ""}
+          width={1000}
+          height={1000}
+          className="rounded-3xl w-full h-full object-cover"
+        />
+
+        <div className="w-full mt-10">
+          <div className="prose">
+            <MDXRemote source={project?.content || ""} components={components} />
+          </div>  
         </div>
       </div>
     </section>

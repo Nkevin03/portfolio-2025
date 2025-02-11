@@ -20,7 +20,7 @@ export default async function ProjectsPage({ searchParams }: Props) {
     <div className="container mx-auto md:py-16">
       <div className="pt-10">
         <div className="flex justify-center">
-          <ShimmerButton className="text-2xl font-bold">Projects</ShimmerButton>
+          <ShimmerButton className="text-2xl font-bold">Progetti</ShimmerButton>
         </div>
         <div className='flex'>
           <div className="w-1/3">

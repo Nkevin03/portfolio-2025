@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased md:max-w-screen-xl mx-auto`}
       >
-        <div className="absolute top-0 left-0 w-full h-screen z-0">
+        <div className="fixed top-0 left-0 w-full h-max z-0">
           <Particles />
         </div>
         <Navbar />
