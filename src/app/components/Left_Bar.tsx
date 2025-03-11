@@ -37,7 +37,7 @@ const Left_Bar = () => {
           Ciao! <br /> Sono Kevin
         </h1>
         <div className="my-4">
-          <p className="md:text-lg text-center">
+          <p className="md:text-lg text-center lg:text-left">
             <span className="text-primary_green">Web Developer</span> con 3 anni
             di esperienza nello <br className="block md:hidden" /> sviluppo di <br className="hidden md:block lg:hidden"/> siti e applicazioni web.
           </p>

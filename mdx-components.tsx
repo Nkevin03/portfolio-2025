@@ -13,8 +13,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h1 className="text-white text-6xl font-bold">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="  font-bold text-white py-10">{children}</h2>
+      <h2 className="  font-bold text-white py-6">{children}</h2>
     ),
+    
+    separator: ({ children }) => (
+      <div className="h-2 w-full bg-white">
+        
+      </div>
+    ),  
 
     p: ({ children }) => <p className="text-white">{children}</p>,
     img: (props) => (
