@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link href={`/projects/${project.slug}`}>
+    <Link href={`/progetto/${project.slug}`}>
       <article className="group relative rounded-lg overflow-hidden border border-gray-200 hover:shadow-md hover:shadow-primary_green transition-colors h-full flex flex-col justify-between">
         <div>
           <Image

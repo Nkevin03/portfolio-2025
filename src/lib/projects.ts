@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import path from 'path';
 import { promises as fs } from 'fs';
 
-const projectsDirectory = path.join(process.cwd(), 'src/content/projects');
+const projectsDirectory = path.join(process.cwd(), 'src/content/progetti');
 
 export async function getAllProjects(): Promise<Project[]> {
   const files = await fs.readdir(projectsDirectory);

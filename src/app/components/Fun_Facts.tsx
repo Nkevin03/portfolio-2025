@@ -13,7 +13,7 @@ const FunFacts = () => {
   ];
 
   return (
-    <div className="bg-background rounded-lg p-4 max-w-lg mx-auto shadow-md">
+    <div className=" rounded-lg p-4  lg:max-w-lg mx-auto shadow-md">
       <h2 className="text-2xl font-bold mb-4">🎉 Fun Facts Su di Me</h2>
       <ul className="list-none p-0 m-0">
         {facts.map((fact, index) => (

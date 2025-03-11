@@ -69,7 +69,7 @@ const Center_Bar = () => {
         <div>
           <Dayli_Dev />
         </div>
-        <div className="mt-10">
+        <div className="mt-10 block md:hidden lg:block">
           <MorphingText texts={texts} />
         </div>
       </div>

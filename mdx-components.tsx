@@ -10,21 +10,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => (
-      <h1 className="text-primary_green/80 text-6xl font-bold">{children}</h1>
+      <h1 className="text-white text-6xl font-bold">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2  className="  font-bold text-primary_green pt-10">{children}</h2>
+      <h2 className="  font-bold text-white py-10">{children}</h2>
     ),
 
-    p: ({ children }) => (
-      <p className="text-white mt-10">{children}</p>
-    ),
+    p: ({ children }) => <p className="text-white">{children}</p>,
     img: (props) => (
       <Image
-        sizes="100vw"
         width={1000}
         height={1000}
-        className="rounded-lg md:my-10 my-5 shadow-lg"
+        className="rounded-3xl w-full my-10 mx-auto"
         {...(props as ImageProps)}
       />
     ),
