@@ -1,48 +1,75 @@
 ---
 slug: gestionale
 title: Gestionale
-description: La mia todo app per gestire le mie attività
+description: La mia web app per gestire i miei progetti e i miei clienti
 category: Web App
 date: '2024-03-15'
 tags: ['next.js', 'react', 'tailwindcss', 'typescript']
-image: '/assets/work/gestionale.jpeg'
+image: '/assets/work/gestionale/Dashboard.png'
 featured: true
 github: 'https://github.com/tuouser/portfolio'
 ---
 
-# Creazione di una Todo App con Next.js  
+# La mia web app per gestire i miei progetti e i miei clienti 
 
-Questa è una **todo app** sviluppata con **Next.js**, **TailwindCSS**, **TypeScript**, **Prisma** e **Supabase**.  
+<Danger>Tranquilli amici della finanza, sono clienti immaginari...</Danger>
 
-
-## Descrizione  
-
-L'obiettivo di questo progetto era imparare a gestire i dati con **Supabase**, sfruttando **Next.js 15** e **TailwindCSS**. Ho progettato un'interfaccia semplice e minimalista, dando priorità alla leggibilità e alla user experience.  
-
-Ho iniziato sviluppando una CRUD per la gestione delle attività, includendo diversi campi per filtrare e organizzare le task in base a vari criteri.  
+Questa è una **web app** sviluppata con **Next.js**, **TailwindCSS**, **TypeScript**, **Supabase** e **Prisma**.  
 
 
-![Gestionale](/assets/work/gestionale/add_task.jpeg)
+<SingleImage image="/assets/work/gestionale/Dashboard.png" alt="Dashboard"  />
+
+## 🚀 Obiettivo del Progetto
+
+L'obiettivo principale di questo progetto era imparare a gestire i dati con **Supabase** interfacciandomi tramite un **ORM** come **Prisma**, sfruttando le potenzialità di **Next.js 15** e **TailwindCSS**. Ho progettato un'interfaccia semplice e minimalista, dando priorità alla leggibilità e alla user experience.  
+
+## 🏗️ Step di Sviluppo
+
+### 1. Creazione e Gestione Clienti
+Ho iniziato sviluppando una **CRUD** per la gestione dei clienti. Questo mi ha permesso di implementare le operazioni di: 
+- Creazione di nuovi clienti
+- Modifica delle informazioni esistenti
+- Eliminazione dei clienti non più necessari
+
+<DoubleImage image1="/assets/work/gestionale/clienti.png" image2="/assets/work/gestionale/creazione_clienti.png" alt1="Gestione Clienti" alt2="Creazione Clienti" />
+
+### 2. Gestione delle Attività
+Successivamente, ho creato una sezione dedicata alla gestione delle attività. Ogni task include:  
+- **Selezione del cliente** associato
+- **Titolo** dell'attività
+- **Data di fine**
+- **Tempo preventivato**
+- **Descrizione** del progetto
+- Possibilità di **modificare** e **cancellare** le attività
+
+<DoubleImage image1="/assets/work/gestionale/creazione_task.png" image2="/assets/work/gestionale/edit_task.png" alt1="Creazione Task" alt2="Modifica Task" />
+
+### 3. Dettagli cliente
+
+Infine ho creato una sezione per visualizzare i **dettagli del cliente**, che si apre cliccando sul cliente nella **dashboard**, in cui si possono tutte le informazioni ma soprattutto tutte le **attività associate** al cliente, con la possibilità di **gestire le ore** lavorate e le ore preventivate.
+
+<SingleImage image="/assets/work/gestionale/cliente.png" alt="Dettagli Cliente" />
+
+<Note>
+  Questo progetto è solo in fase **embrionale**, ci sono tantissime funzionalità che voglio implementare pian piano e vorrei anche farci dei post per spiegare come ho fatto tutto, dall'**interfaccia** all'**implementazione delle funzionalità**.
+</Note>
 
 
-Successivamente, ho implementato una sezione dedicata alla gestione dei clienti e dei loro dati.  
 
 
-![Gestionale](/assets/work/gestionale/add_client.jpeg)  
 
-## Caratteristiche Principali  
+## 🌟 Caratteristiche Principali
 
 - **Supabase** per la gestione del database  
 - **TypeScript** per una tipizzazione più sicura  
 - **Shadcn/ui** per componenti moderni e stilizzati  
 
+## ⚙️ Stack Tecnologico
 
-## Stack Tecnologico
-
-* Next.js 14
-* React
+* Next.js 15
 * TailwindCSS
 * TypeScript
-* Framer Motion 
+* Prisma
+* Supabase
 
-
+---

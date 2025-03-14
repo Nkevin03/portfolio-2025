@@ -1,9 +1,9 @@
 import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 import Image from "next/image";
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { MDXWrapper } from '@/app/progetto/components/wrapper'
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { useMDXComponents } from '@mdx-components';
-
+import { MDXRemote } from 'next-mdx-remote/rsc';
 export default async function Page({
   params,
 }: {
@@ -19,22 +19,26 @@ export default async function Page({
         <div className="md:mb-10 flex justify-center mb-5 ">
           <ShimmerButton className="text-2xl font-bold">{project?.title}</ShimmerButton>
         </div>
-        <Image
-          src={project?.image || ""}
-          alt={project?.title || ""}
-          width={1000}
-          height={1000}
-          className="rounded-3xl w-full h-full object-cover"
-        />
+        {/* <div className="py-5">
+          <Image
+            src={project?.image || ''}
+            alt={project?.title || ''}
+            width={1000}
+            height={1000}
+            className="rounded-[20px] p-4 w-full h-auto"
+          />
+        </div> */}
 
         <div className="w-full mt-10">
           <div className="prose">
-            <MDXRemote source={project?.content || ""} components={components} />
-          </div>  
+            <MDXWrapper>
+              <MDXRemote source={project?.content || ''} components={components} />
+            </MDXWrapper>
+          </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 export function generateStaticParams() {
